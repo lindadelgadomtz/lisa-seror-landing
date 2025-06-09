@@ -1,0 +1,127 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    margin-top: -100px;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-image: url('../../assets/medina_melancholic_photo.webp');
+    background-size: cover;
+    background-position: center 20%;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0; // shorthand for top/right/bottom/left: 0
+        background: rgba(43, 59, 74, 0.75); // blueish melancholic tint
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    // Make sure the content stays above the mask
+    >* {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.inner {
+    max-width: 1240px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.imageWrapper {
+    width: 50%;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: $shadow-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 2px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.textBlock {
+    width: 50%;
+    padding-left: 2rem;
+    font-family: $font-secondary;
+    color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.subtitle {
+    font-family: $font-secondary;
+    font-size: 2rem;
+    color: $color-secondary;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: $color-primary;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: $color-secondary;
+    max-width: 90%;
+}
+
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+    }
+
+    .imageWrapper,
+    .textBlock {
+        width: 100%;
+        text-align: center;
+        margin-top: -10px;
+    }
+
+    .textBlock {
+        padding-left: 0;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.6rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+}

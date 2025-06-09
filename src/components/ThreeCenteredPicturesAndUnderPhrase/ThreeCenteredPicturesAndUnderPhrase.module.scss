@@ -1,0 +1,123 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    margin-top: -85px;
+    z-index: 98;
+    overflow: visible;
+    height: 600px;
+}
+
+.titleAbove,
+.titleBelow {
+    font-family: $font-secondary;
+    color: $color-secondary;
+    font-size: 2rem;
+    bottom: -5rem;
+    overflow: visible;
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+    text-align: center;
+
+    // AOS Mobile overrides
+    &[data-aos] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    &[data-aos].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.imagesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: -3rem auto;
+    flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
+    padding-top: 5rem;
+}
+
+.imageWrapper {
+    width: 400px;
+    height: 300px;
+    margin-top: -10px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: $shadow-large;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    z-index: 100;
+    position: relative;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    // AOS Mobile overrides
+    &[data-aos] {
+        opacity: 0;
+        transform: scale(0.98);
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    &[data-aos].aos-animate {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 4rem 1rem;
+    }
+
+    .titleAbove,
+    .titleBelow {
+        font-size: 1.3rem;
+        padding: 2rem 1rem;
+        margin: 1.5rem 0;
+        line-height: 1.4;
+    }
+
+    .imagesContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 0 auto;
+    }
+
+    .imageWrapper {
+        width: 85vw;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        margin: 0;
+        padding: 0;
+        box-shadow: $shadow-large;
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: $shadow-large;
+        }
+    }
+
+    .image {
+        border-radius: $border-radius;
+    }
+}

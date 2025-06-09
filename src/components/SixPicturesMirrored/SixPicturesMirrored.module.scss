@@ -1,0 +1,150 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    padding: 6rem 2rem;
+    margin-top: -250px;
+    position: relative;
+    z-index: 102;
+    overflow-x: auto;
+
+}
+
+.gridContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 1240px;
+    margin: 0 auto;
+    gap: 2rem;
+    position: relative;
+    z-index: 102;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
+
+.leftColumn,
+.rightColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.leftTop,
+.rightBottom {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    // Handle only one image (modern browsers)
+    &:has(.imageWrapper:only-child) {
+        .imageWrapper {
+            flex: 1 1 100%;
+        }
+    }
+
+    // Fallback class for older browsers
+    &.singleImage {
+        .imageWrapper {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+.leftTop>.imageWrapper:first-child,
+.rightBottom>.imageWrapper:last-child {
+    flex: 2;
+}
+
+.leftTop>.imageWrapper:last-child,
+.rightBottom>.imageWrapper:first-child {
+    flex: 3;
+}
+
+.leftBottom,
+.rightTop {
+    flex: 1;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow-large;
+    transition: transform 0.3s ease;
+    flex: 1;
+
+    &:hover {
+        transform: scale(1.03);
+
+        .caption {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        border-radius: $border-radius;
+    }
+
+    .caption {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        background: rgba(0, 0, 0, 0.6);
+        color: $color-primary;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 2px;
+        font-family: $font-secondary;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+}
+
+@media (max-width: 768px) {
+    .gridContainer {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .leftTop,
+    .rightBottom {
+        flex-direction: column;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        gap: 1rem;
+    }
+
+    .imageWrapper {
+        height: 250px;
+    }
+}
+
+.placeholder {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.rightExtra {
+    display: flex;
+    justify-content: center;
+
+    .imageWrapper {
+        width: 80%;
+        height: 250px;
+    }
+}

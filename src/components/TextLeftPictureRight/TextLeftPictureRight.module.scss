@@ -1,0 +1,150 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    margin-top: -400px;
+    align-items: center;
+    min-height: 80vh;
+    background-image: url('./../../assets/full_width_black_banner_textured.webp'); // ✅ Replace with your image path
+    background-size: cover;
+    background-position: center -150px;
+    background-repeat: no-repeat;
+    box-shadow: $shadow-large;
+
+
+}
+
+.inner {
+    max-width: 1240px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.textBlock {
+    width: 600px;
+    padding: 0;
+    margin-left: 0;
+    font-family: $font-secondary;
+    color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    position: relative;
+    border-radius: 12px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        border-radius: 12px;
+    }
+
+    >* {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+    }
+}
+
+.subtitle {
+    font-family: $font-secondary;
+    font-size: 2rem;
+    color: $color-secondary;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-top: 14rem;
+    color: #baacac;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: $color-secondary;
+    max-width: 90%;
+}
+
+.imageWrapper {
+    width: 43%;
+    border-radius: 3px;
+    margin-top: 14rem;
+    overflow: hidden;
+    box-shadow: $shadow-large;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 4;
+
+
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 2px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.5);
+    }
+
+}
+
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+    }
+
+    .textBlock,
+    .imageWrapper {
+        flex: 100%;
+        text-align: center;
+        margin-top: -10px;
+        order: 4;
+    }
+
+    .textBlock {
+        padding-right: 0;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        order: 1;
+    }
+
+    .subtitle {
+        font-size: 1.6rem;
+        order: 2;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 100%;
+        order: 3;
+    }
+}
+
+.highlight {
+    color: $color-fifthary;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}

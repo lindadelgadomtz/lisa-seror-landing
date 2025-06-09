@@ -32,7 +32,25 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000 url('./assets/background_photo_hero.webp') no-repeat center center fixed;
+  background-size: cover;
+  background-position: center 40%;
+  font-family: 'Playfair Display', serif;
+  color: #fefefe;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
