@@ -17,7 +17,7 @@ import bannerStyles from './components/FourLandscapeBanner/FourLandscapeBanner.m
 import CollageGallery from './components/CollageGallery/CollageGallery';
 import textStyles from './components/TextLeftPictureRight/TextLeftPictureRight.module.scss';
 import phraseStyles from './components/CenteredPicturePhraseText/CenteredPicturePhraseText.module.scss';
-
+import Footer from './components/Footer/Footer'
 
 
 // Define the PictureBlock type if not already imported
@@ -124,7 +124,7 @@ function App() {
       />
       <PictureLeftTextRight
         imageUrl="/images/les_deux_moutons.webp"
-        title="Nous avons un pere commun, une histoire commune, donc une maison commune."
+        title="Nous avons un père commun, une histoire commune, donc une maison commune."
       //subtitle="Œuvre en lumière"
       //description="Cette œuvre met en valeur les contrastes subtils et l'harmonie des couleurs, caractéristiques du style unique de Lisa Seror."
       />
@@ -184,7 +184,7 @@ function App() {
           <>
             Ces chaises qui restent obsessionnelles parce que cette question reste sans reponse...{' '}
             <br />
-            <span className={bannerStyles.highlight}>où est notre place?</span>
+            <span className={bannerStyles.highlight}>Où est notre place?</span>
           </>
         }
         backgroundImage="/images/full_width_black_banner_textured.webp"
@@ -195,12 +195,6 @@ function App() {
         centeredImageUrl="/images/lisa_seror_lautre_compressed.webp"
         centeredImageAlt="L'autre"
       />
-
-
-
-
-
-
 
       {/* <ThreePicturesTitle
         mainImage="/images/lisa_seror_recherche_du_maitre.webp"
@@ -247,6 +241,8 @@ function App() {
           imageUrl: '/images/lisa_painting_two.webp',
         }}
       />   */}
+
+      <Footer />
 
 
     </>
