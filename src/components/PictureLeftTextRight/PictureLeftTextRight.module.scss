@@ -2,7 +2,6 @@
 
 .wrapper {
     width: 100%;
-    padding: 2rem;
     display: flex;
     margin-top: -100px;
     justify-content: center;
@@ -43,7 +42,6 @@
     width: 50%;
     border-radius: 3px;
     overflow: hidden;
-    box-shadow: $shadow-large;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,24 +94,30 @@
     max-width: 90%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
     .inner {
         flex-direction: column;
+        gap: 2rem;
+        padding: 0 2rem;
+
     }
 
-    .imageWrapper,
-    .textBlock {
-        width: 100%;
-        text-align: center;
-        margin-top: -10px;
+    .wrapper {
+        background-size: 300%;
+        background-position: center center;
     }
 
     .textBlock {
-        padding-left: 0;
+        width: 55%;
+        margin-top: -10rem;
+        order: 1;
+        padding: 0 1rem;
+        align-items: center;
     }
 
     .title {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        margin-top: 19rem;
     }
 
     .subtitle {
@@ -124,4 +128,64 @@
         font-size: 1rem;
         max-width: 100%;
     }
+
+    .imageWrapper {
+        width: 40%;
+        aspect-ratio: 3/4;
+        margin-top: -7rem;
+        order: 2;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .inner {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 2rem;
+
+    }
+
+    .wrapper {
+        background-size: 300%; // Increase the background coverage
+        background-position: center top; // Adjust as needed
+    }
+
+
+
+    .textBlock {
+        width: 100%;
+        margin-top: -15rem;
+        order: 1;
+        padding: 0 1rem;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-top: 19rem;
+    }
+
+    .subtitle {
+        font-size: 1.6rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .imageWrapper {
+        width: 75%;
+        aspect-ratio: 3/4;
+        margin-top: -7rem;
+        order: 2;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+
+
 }
