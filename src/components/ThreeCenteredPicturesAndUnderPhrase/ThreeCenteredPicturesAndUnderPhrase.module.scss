@@ -4,16 +4,16 @@
     padding: 6rem 2rem;
     text-align: center;
     position: relative;
-    margin-top: -85px;
+    margin-top: -25rem;
     z-index: 98;
     overflow: visible;
-    height: 600px;
+    min-height: 1000px;
 }
 
 .titleAbove,
 .titleBelow {
     font-family: $font-secondary;
-    color: $color-secondary;
+    color: $color-primary;
     font-size: 2rem;
     bottom: -5rem;
     overflow: visible;
@@ -39,8 +39,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 19rem;
     gap: 2rem;
-    margin: -3rem auto;
     flex-wrap: wrap;
     z-index: 2;
     position: relative;
@@ -49,7 +49,8 @@
 
 .imageWrapper {
     width: 400px;
-    height: 300px;
+    height: auto;
+    aspect-ratio: 3 / 2;
     margin-top: -10px;
     border-radius: 2px;
     overflow: hidden;
@@ -83,17 +84,65 @@
     border-radius: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .wrapper {
         padding: 4rem 1rem;
+        margin-top: -10rem;
+
     }
+
 
     .titleAbove,
     .titleBelow {
         font-size: 1.3rem;
-        padding: 2rem 1rem;
-        margin: 1.5rem 0;
         line-height: 1.4;
+        position: static;
+        margin-top: -5rem;
+
+    }
+
+
+    .imagesContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .imageWrapper {
+        width: 85vw;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        margin: 0;
+        padding: 0;
+        box-shadow: $shadow-large;
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: $shadow-large;
+        }
+    }
+
+    .image {
+        border-radius: $border-radius;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        padding: 4rem 1rem;
+        margin-top: -10rem
+    }
+
+
+    .titleAbove,
+    .titleBelow {
+        font-size: 1.3rem;
+        line-height: 1.4;
+        position: static;
+    }
+
+    .titleBelow {
+        margin-top: -5rem;
     }
 
     .imagesContainer {

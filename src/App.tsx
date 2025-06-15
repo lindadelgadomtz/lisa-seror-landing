@@ -177,6 +177,7 @@ function App() {
             alt: 'Troisième image en harmonie',
           },
         ]}
+
       />
 
       <FourLandscapeBanner

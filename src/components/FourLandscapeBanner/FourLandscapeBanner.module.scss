@@ -1,18 +1,16 @@
     @use '../../styles/variables' as *;
 
+
     .bannerWrapper {
         display: flex;
         width: 100%;
-        margin: 0;
-        margin-top: -160px;
-        padding: 0;
-        padding-bottom: 7rem;
-        height: 600px;
+        height: 800px;
+        min-height: 800px;
+        margin-top: -10rem;
         align-items: center;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 600px;
         position: relative;
         z-index: 150;
         overflow: visible;
@@ -20,16 +18,16 @@
 
         .title {
             font-family: $font-secondary;
-            color: $color-secondary;
+            color: $color-primary;
             font-size: 2.5rem;
-            margin-top: -10rem;
-            margin-bottom: 2rem;
+            margin-top: -11rem;
             text-align: center;
             z-index: 200;
             padding: 1rem;
             padding-right: 6rem;
             padding-left: 6rem;
             line-height: 1.2; // 👈 Add this line
+            margin-bottom: -3rem;
         }
 
         .imageRow {
@@ -110,14 +108,38 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1300px) {
         .bannerWrapper {
             flex-direction: column;
+            margin-top: -11rem;
+
+
+
+            .title {
+                font-size: 1.8rem;
+                margin-top: 11rem;
+                margin-bottom: -13rem;
+            }
+
+
+            .imageContainer {
+                height: 200px;
+                padding-top: 2rem;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .bannerWrapper {
+            flex-direction: column;
+            margin-top: -12rem;
+
+
 
             .title {
                 font-size: 1.8rem;
                 margin-top: 2rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: -13.5rem;
             }
 
 
@@ -127,12 +149,12 @@
         }
     }
 
-    .highlight {
-        color: $color-fifthary; // or $color-secondary if defined
-        font-weight: bold;
-        display: inline-block;
-        font-size: 3rem;
-        margin-top: 8rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    // .highlight {
+    //     color: $color-fifthary; // or $color-secondary if defined
+    //     font-weight: bold;
+    //     display: inline-block;
+    //     font-size: 3rem;
+    //     margin-top: 8rem;
+    //     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 
-    }
+    // }

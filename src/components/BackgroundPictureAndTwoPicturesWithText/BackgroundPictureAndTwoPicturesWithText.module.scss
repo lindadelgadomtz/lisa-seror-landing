@@ -9,6 +9,7 @@
     margin-top: -16rem;
     z-index: 0; // Keeps background below previous section
     overflow: visible;
+    padding-top: 4rem;
 
     &::before {
         content: '';
@@ -20,7 +21,13 @@
         background: inherit;
         z-index: -1;
     }
+
+    @media (max-width: 1100px) {
+        padding-top: 1rem; // or even 0 if you want no spacing
+    }
 }
+
+
 
 .overlay {
     position: absolute;
@@ -128,8 +135,55 @@
     }
 }
 
-.highlight {
-    color: $color-fifthary; // or use a custom color like #FFDD57
-    font-size: 4.6rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+// .highlight {
+//     color: $color-fifthary; // or use a custom color like #FFDD57
+//     font-size: 4.6rem;
+//     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+// }
+
+@media (max-width: 1100px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+        margin-right: 0;
+        gap: 2rem;
+        height: auto; // 💥 Important
+    }
+
+    .textContent {
+        order: 1;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 0; // 💥 Reset negative margin
+        position: static; // 💥 Avoid z-index issues unless needed
+        z-index: auto;
+    }
+
+    .rightImageWrapper {
+        order: 0;
+        position: static;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        transform: translateY(-20rem);
+    }
+
+    .rightImageWrapper img {
+        width: 300px;
+    }
+
+    .leftImageWrapper {
+        order: 2;
+        position: static;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .leftImageWrapper img {
+        width: 300px;
+        margin-top: 0;
+    }
 }

@@ -3,7 +3,7 @@
 .section {
     width: 100%;
     height: auto;
-    margin-top: -130px;
+    margin-top: -160px;
     margin-bottom: 1rem;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,6 +23,7 @@
 .overlay {
     width: 100%;
     height: auto;
+    min-height: 800px;
     background-color: rgba(11, 11, 11, 0.4);
     display: flex;
     justify-content: center;
@@ -37,6 +38,10 @@
 .centeredImageWrapper {
     position: relative;
     display: inline-block;
+    width: 80%;
+    max-width: 800px; // or your preferred max width
+    text-align: center;
+
 
     &:hover .imageCaption {
         opacity: 1;
@@ -47,9 +52,10 @@
 .centeredImage {
     aspect-ratio: 4 / 3; // or 4/3, 16/9 depending on your image shape
     height: 70%; // fills 90% of container height
-    width: auto;
-    margin-top: 10rem;
-    padding: 4rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 3rem;
+    padding: 0 2rem; // inner spacing
     border-radius: 2px;
     opacity: 0;
     transform: scale(0.96);
@@ -62,8 +68,8 @@
 
 .imageCaption {
     position: absolute;
-    bottom: 5rem;
-    right: 3.3rem;
+    bottom: 1rem;
+    right: 0.3rem;
     background: rgba(0, 0, 0, 0.6);
     color: white;
     font-size: 1rem;
@@ -82,8 +88,51 @@
     transform: scale(1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
     .centeredImage {
-        max-width: 90%;
+        max-width: 80%;
+        margin-bottom: 2rem;
+
     }
+
+    .section {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .imageCaption {
+        position: absolute;
+        right: 8.3rem;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translateY(10px);
+        pointer-events: none;
+        z-index: 3;
+    }
+
+
+
+}
+
+
+@media (max-width: 1300px) {
+    .centeredImage {
+        max-width: 80%;
+
+    }
+
+    .section {
+        width: 100%;
+        height: 600px;
+
+    }
+
+
+
 }

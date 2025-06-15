@@ -25,7 +25,7 @@
 .titleAbove,
 .titleBelow {
     font-family: $font-secondary;
-    color: $color-secondary;
+    color: $color-primary;
     font-size: 2rem;
     margin-bottom: 2rem;
     padding: 2rem;
@@ -92,9 +92,49 @@
     border-radius: 2px;
 }
 
+
+@media (max-width: 1300px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-top: -11rem;
+        text-align: center;
+        background-size: 600px;
+    }
+
+    .textCenteringWrapper {
+        position: static;
+        transform: none;
+        padding: 0 1rem;
+        width: 100%;
+        text-align: center;
+        padding-top: 4rem;
+    }
+
+    .imagesContainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem auto 0;
+        gap: 2rem;
+    }
+
+    .imageWrapper {
+        width: 90vw;
+        max-width: 600px;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+
+    .image {
+        object-fit: cover;
+    }
+}
+
 @media (max-width: 768px) {
     .wrapper {
-        padding: 4rem 1rem;
+        height: 650px;
     }
 
     .titleAbove,

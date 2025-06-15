@@ -17,10 +17,7 @@ const FourLandscapeBanner: React.FC<FourLandscapeBannerProps> = ({ title, images
     return (
         <section className={styles.bannerWrapper}
             style={{
-                backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
+                backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined
             }}>
 
             <div>{title && <h2 className={styles.title}>{title}</h2>}</div>
@@ -35,7 +32,7 @@ const FourLandscapeBanner: React.FC<FourLandscapeBannerProps> = ({ title, images
                     </div>
                 ))}
             </div>
-        </section>
+        </section >
     );
 };
 
