@@ -1,13 +1,26 @@
 @use '../../styles/variables' as *;
 
+
+.stackContainer {
+    display: flex;
+    flex-direction: row; // horizontal layout for desktop
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+
+    @media (max-width: 1100px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .wrapper {
     position: relative;
-    height: 950px;
+    min-height: 950px;
     background-size: cover;
     background-position: center;
     padding: 8rem 2rem 6rem;
     margin-top: -16rem;
-    z-index: 0; // Keeps background below previous section
     overflow: visible;
     padding-top: 4rem;
 
@@ -22,9 +35,9 @@
         z-index: -1;
     }
 
-    @media (max-width: 1100px) {
-        padding-top: 1rem; // or even 0 if you want no spacing
-    }
+    // @media (max-width: 1100px) {
+    //     padding-top: 1rem; // or even 0 if you want no spacing
+    // }
 }
 
 
@@ -33,7 +46,6 @@
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
 }
 
 .content {
@@ -45,6 +57,7 @@
     margin-top: -15rem;
     justify-content: flex-end;
     margin-right: 10rem;
+    gap: 3rem;
 
 }
 
@@ -55,12 +68,16 @@
     padding-right: 6rem;
     z-index: 2;
 
+    @media (min-width: 1450px) {
+        margin-top: 500px;
+        padding-left: 600px;
+    }
+
 
     h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
         font-size: 3rem;
-
+        margin-bottom: 1rem;
+        padding-left: 9rem
     }
 
     p {
@@ -68,7 +85,7 @@
         font-size: 1.1rem;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1450px) {
         order: 2
     }
 
@@ -88,12 +105,12 @@
         height: auto;
     }
 
-    @media (max-width: 1100px) {
-        position: static;
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
-    }
+    // @media (max-width: 1100px) {
+    //     position: static;
+    //     margin-top: 2rem;
+    //     display: flex;
+    //     justify-content: center;
+    // }
 }
 
 .leftImageWrapper {
@@ -104,7 +121,7 @@
 
 .rightImageWrapper {
     right: 2rem;
-    margin-top: -5rem;
+    margin-top: 12rem;
     margin-right: 10rem;
 
 }
@@ -117,22 +134,23 @@
     width: 560px;
     height: auto;
 
-    @media (max-width: 1100px) {
-        width: 300px;
-        margin-top: 5rem;
-        order: 1;
-    }
+
+    // @media (max-width: 1100px) {
+    //     width: 300px;
+    //     margin-top: 5rem;
+    //     order: 1;
+    // }
 }
 
 .leftImageWrapper img {
     width: 470px;
     height: auto;
 
-    @media (max-width: 1100px) {
-        width: 300px;
-        margin-top: 5rem;
-        order: 3;
-    }
+    // @media (max-width: 1100px) {
+    //     width: 300px;
+    //     margin-top: 5rem;
+    //     order: 3;
+    // }
 }
 
 // .highlight {
@@ -140,50 +158,52 @@
 //     font-size: 4.6rem;
 //     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 // }
+@media (max-width: 1450px) {
+    .wrapper {
+        padding: 2rem 1rem;
+        height: auto;
+    }
 
-@media (max-width: 1100px) {
-    .content {
+    .stackContainer {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        margin: 0;
-        margin-right: 0;
-        gap: 2rem;
-        height: auto; // 💥 Important
+        gap: 3rem; // spacing between elements
+        text-align: center;
+    }
+
+    .leftImageWrapper,
+    .rightImageWrapper {
+        position: static !important; // ⬅️ cancel absolute
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: 100%;
     }
 
     .textContent {
-        order: 1;
-        padding: 1rem;
+        order: unset;
+        max-width: 90%;
+        padding: 0 1rem;
         text-align: center;
-        margin-top: 0; // 💥 Reset negative margin
-        position: static; // 💥 Avoid z-index issues unless needed
-        z-index: auto;
+        width: 100%;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
     }
 
-    .rightImageWrapper {
-        order: 0;
-        position: static;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        transform: translateY(-20rem);
-    }
-
+    .leftImageWrapper img,
     .rightImageWrapper img {
         width: 300px;
-    }
-
-    .leftImageWrapper {
-        order: 2;
-        position: static;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .leftImageWrapper img {
-        width: 300px;
-        margin-top: 0;
+        height: auto;
+        border-radius: $border-radius;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 }

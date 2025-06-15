@@ -30,13 +30,18 @@ const BackgroundPictureAndCenteredPicture: React.FC<Props> = ({
             aria-label="Artistic section with background and foreground image"
         >
             <div className={styles.overlay}>
-                <div className={styles.centeredImageWrapper}>
-                    <img
-                        src={centeredImageUrl}
-                        alt={centeredImageAlt}
-                        className={`${styles.centeredImage} ${loaded ? styles.animate : ''}`}
-                    />
-                    <span className={styles.imageCaption}>{centeredImageAlt}</span>
+                <div className={styles.container}>
+
+                    <div className={styles.stackContainer}>
+                        <div className={styles.centeredImageWrapper}>
+                            <img
+                                src={centeredImageUrl}
+                                alt={centeredImageAlt}
+                                className={`${styles.centeredImage} ${loaded ? styles.animate : ''}`}
+                            />
+                            <span className={styles.imageCaption}>{centeredImageAlt}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section >

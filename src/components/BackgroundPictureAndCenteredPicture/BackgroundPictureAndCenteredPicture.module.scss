@@ -58,17 +58,22 @@
     padding: 0 2rem; // inner spacing
     border-radius: 2px;
     opacity: 0;
-    transform: scale(0.96);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
 
-    &:hover {
+    .animate {
+        opacity: 1;
+        // no transform, so it doesn't move when it becomes visible
+    }
+
+    .centeredImage:hover {
         transform: scale(1.03);
     }
 }
 
 .imageCaption {
     position: absolute;
-    bottom: 1rem;
+    bottom: 3rem;
     right: 0.3rem;
     background: rgba(0, 0, 0, 0.6);
     color: white;
